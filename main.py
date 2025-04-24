@@ -15,9 +15,9 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 query = 'Data Scientist'
 xq = model.encode(query).tolist()
 xc = index.query(vector=xq, top_k=5, include_metadata=True)
-print(xc)
+# print(xc)
 
-
+# Transformation for reranking algorithm to work
 transformed_documents = [
     {
         'id': match['id'],
